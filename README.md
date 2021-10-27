@@ -1,6 +1,9 @@
 # azconf21-demo
 Repo holding the scripts for azure resource creation and dotnet microservice with cosmos backend
 
+## Azure architecture
+![Deployment Architecture](https://swaminathanvetri.blob.core.windows.net/blog-images/azconf-architecture.png)
+
 ## Azure resources creation
 Check out the resources.azcli file to create the necessary azure resources to run this application
 
