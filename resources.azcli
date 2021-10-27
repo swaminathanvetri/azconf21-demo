@@ -1,0 +1,34 @@
+#1.  login to azure
+az login
+
+#2. create a new resource group in southeast asia
+az group create --location southeastasia --name 'rg-azconf-southeastasia' --tags env=dev 
+
+#3. create a resource group in west europe
+az group create --location westeurope --name 'rg-azconf-westeurope' --tags env=dev 
+
+#4. create app service plan in southeast asia
+az appservice plan create --resource-group rg-azconf-southeastasia --name 'asp-p1v2-southeastasia' --is-linux --location southeastasia --sku P1V2
+
+#4.1 create app service to host the dotnet app
+az webapp create --name app-azconf-southeastasia --plan asp-p1v2-southeastasia --resource-group rg-azconf-southeastasia --runtime 'DOTNET|5.0' --tags env=dev
+
+#5. create app service plan in west europe
+az appservice plan create --resource-group rg-azconf-westeurope --name 'asp-p1v2-westeurope' --is-linux --location westeurope --sku P1V2
+
+#5.1 create app service to host the dotnet app
+az webapp create --name app-azconf-westeurope --plan asp-p1v2-westeurope --resource-group rg-azconf-westeurope --runtime 'DOTNET|5.0' --tags env=dev
+
+#6. Add front door extension
+az extension add --name front-door
+
+#7. Add a generic rg for global traffic related resources
+az group create --location southindia --name rg-azconf --tags env=dev
+
+#8. Create front door using azure portal to showcase the different settings available
+
+#9 - create azure cosmos with multi region writes enabled
+az cosmosdb create --name cosmos-azconf-demo --resource-group rg-azconf-southeastasia --enable-multiple-write-locations true --locations regionName=southeastasia failoverPriority=0 --locations regionName=westeurope failoverPriority=1 --enable-automatic-failover true
+#10 - deploy the dotnet webapi with region specific connection strings
+#11 - test how different region requests are able to write/read from other region 
+
