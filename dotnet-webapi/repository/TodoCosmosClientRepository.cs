@@ -16,7 +16,7 @@ namespace dotnet_webapi
             logger = _logger;
             //TODO: Parametrize the endpoint, key, region
             client = new CosmosClient("https://cosmos-azconf-demo.documents.azure.com:443/",
-                                                                "If8vVuDffIJsqRWGQKa3uWmG3ZRT1pdyPnrUPuHFzADUVD2G5mRBkcXgFdYqeY04jpu5i1XAAwtNj5vrEWA7JA==",
+                                                                "",
                                                                     new CosmosClientOptions
                                                                     {
                                                                         ApplicationRegion = Regions.SoutheastAsia
