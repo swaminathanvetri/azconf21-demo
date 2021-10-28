@@ -1,7 +1,10 @@
 # azconf21-demo
 Repo holding the scripts for azure resource creation and dotnet microservice with cosmos backend
 
-## Azure architecture
+## Azure architecture - Traffic Manager based
+![Deployment Traffic Manager](https://swaminathanvetri.blob.core.windows.net/blog-images/Demo_app_architecture_traffic_manager.png)
+
+## Azure architecture - Front Door based
 ![Deployment Architecture](https://swaminathanvetri.blob.core.windows.net/blog-images/azconf-architecture.png)
 
 ## Azure resources creation
