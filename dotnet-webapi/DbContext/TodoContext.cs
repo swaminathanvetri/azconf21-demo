@@ -10,7 +10,7 @@ namespace dotnet_webapi
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder.UseCosmos(
                 "https://cosmos-azconf-demo.documents.azure.com:443/",
-                "If8vVuDffIJsqRWGQKa3uWmG3ZRT1pdyPnrUPuHFzADUVD2G5mRBkcXgFdYqeY04jpu5i1XAAwtNj5vrEWA7JA==",
+                "",
                 databaseName: "ToDoList", options => {
                     options.Region("West Europe");
                 });
